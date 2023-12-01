@@ -27,7 +27,8 @@ jobs:
 
     - name: copiar settings-conatus-repository.xml
       run: |
-        envsubst < devops/settings-conatus-repository.xml > $HOME/.m2/settings.xml
+        echo "${MAVEN_SETTINGS}" > ./settings.xml
+        envsubst < ./settings.xml > $HOME/.m2/settings.xml
         export MAVEN_HOME=$HOME/.m2/settings.xml
 
     - name: Configurar gcloud
