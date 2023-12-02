@@ -28,7 +28,7 @@ jobs:
     - name: Obter versão do POM
       id: obter-versao-tag
       run: |
-        VERSION=$(grep '<version>' "./pom.xml" | sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p')
+        VERSION=$(grep -m1 '<version>' "./pom.xml" | sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p')
         echo "Versão do POM: $VERSION"
         echo "::set-output name=VERSION::$VERSION"
 
