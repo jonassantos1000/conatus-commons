@@ -36,11 +36,11 @@ jobs:
       if: github.event.pull_request.merged == true
       run: |
         # Obtém a versão do pom
-        VERSION=$(grep '<version>' "./pom.xml" | sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p')
+        VERSION=$(grep -m1 '<version>' "./pom.xml" | sed -n 's/.*<version>\(.*\)<\/version>.*/\1/p')
 
         # Gerar uma tag com a versão do pom
-        git tag $VERSION
-        git push origin $VERSION
+        git tag "$VERSION"
+        git push origin "$VERSION"
 
         # Obtém o artifactId do projeto Maven
         ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
