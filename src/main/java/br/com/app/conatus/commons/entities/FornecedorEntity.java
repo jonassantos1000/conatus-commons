@@ -35,6 +35,7 @@ public class FornecedorEntity {
 	@Column(name = "IDENT")
 	private Long id;
 	
+	@Column(name = "DS_NOME")
 	private String nome;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "fornecedor")
