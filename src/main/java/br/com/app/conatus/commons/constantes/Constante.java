@@ -4,6 +4,6 @@ import java.time.ZoneId;
 
 public interface Constante {
 	
-	static String AMERICA_SP = "America/Sao_Paulo";  
-	static ZoneId ZONE_SP = ZoneId.of(AMERICA_SP);
+	static final String AMERICA_SP = "America/Sao_Paulo";  
+	static final ZoneId ZONE_SP = ZoneId.of(AMERICA_SP);
 }
