@@ -7,6 +7,7 @@ import java.util.List;
 import org.hibernate.annotations.TenantId;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -66,7 +67,7 @@ public class ProdutoEntity {
 	@Column(name = "DT_ATUALIZACAO")
 	private ZonedDateTime dataAtualizacao;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "produto")
-	private List<ProdutoCategoriaEntity> produtos;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "produto", cascade = {CascadeType.REFRESH, CascadeType.MERGE, CascadeType.REMOVE})
+	private List<ProdutoCategoriaEntity> categorias;
 
 }
