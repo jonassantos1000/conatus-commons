@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.app.conatus</groupId>
 	<artifactId>conatus-commons</artifactId>
-	<version>1.2.0</version>
+	<version>1.3.0</version>
 	<name>conatus-commons</name>
 	<description>Biblioteca responsavel por centralizar entidades comuns entre os microserviços conatus.</description>
 	<properties>
